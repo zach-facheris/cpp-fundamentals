@@ -1,27 +1,35 @@
 #include <iostream>
-#include <vector>
-#include <numeric>
 
-int main() {
-    std::vector<int> nums;
-    int x;
-    while (std::cin >> x) nums.push_back(x);
+class Rectangle
+{
+public:
+    // TODO: constructor Rectangle(int w, int h) with a member initializer list
+    // TODO: int area() const
+    // TODO: int perimeter() const
+    // TODO: bool isSquare() const
 
-    auto it_start = nums.begin();
-    auto it_end = nums.end();
+    Rectangle(int w, int h) : width{w}, height{h} {}
+    int area() const { return width * height; }
+    int perimeter() const { return (2 * width) + (2 * height); }
+    bool is_square() const { return width == height; }
 
-    unsigned long long total = std::accumulate(it_start, it_end, 0ULL, [](unsigned long long run, int elem){
-        if(elem % 2 != 0)
-        {
-            return run;
-        }
+private:
+    int width;
+    int height;
+};
 
-        unsigned long long square = static_cast<long long>(elem) * elem;
+int main()
+{
+    int w, h;
+    std::cin >> w >> h;
+    // TODO: build a Rectangle from w and h, then use its methods below
+    Rectangle rect{w, h};
 
-        return run + square;
-    });
-    // TODO: set total to the sum of the squares of the even values in nums.
-
-    std::cout << total << "\n";
+    int a = rect.area();
+    int p = rect.perimeter();
+    bool sq = rect.is_square();
+    std::cout << "area: " << a << "\n";
+    std::cout << "perimeter: " << p << "\n";
+    std::cout << "square: " << (sq ? "yes" : "no") << "\n";
     return 0;
 }
