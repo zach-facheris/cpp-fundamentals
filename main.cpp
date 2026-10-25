@@ -10,13 +10,15 @@ int main() {
     auto it_start = nums.begin();
     auto it_end = nums.end();
 
-    long long total = std::accumulate(it_start, it_end, 0, [](long long run, int elem){
+    unsigned long long total = std::accumulate(it_start, it_end, 0, [](unsigned long long run, int elem){
         if(elem % 2 > 0)
         {
             return run;
         }
 
-        return run + (static_cast<long long>(elem) * elem);
+        unsigned long long square = static_cast<long long>(elem) * elem;
+
+        return run + square;
     });
     // TODO: set total to the sum of the squares of the even values in nums.
 
