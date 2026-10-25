@@ -1,18 +1,20 @@
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <algorithm>
 
 int main()
 {
-    int a = 0;
-    int b = 0;
-    std::cin >> a >> b;
+    unsigned long long w, h;
+    std::cin >> w >> h;
 
-    // TODO: both results can fall outside the int range.
-    // Give them a type that holds them, and make sure the
-    // arithmetic itself is done in that type, not in int.
-    long long sum = static_cast<long long>(a) + b;
-    long long diff = static_cast<long long>(a) - b;
+    // TODO: print the area (it can be as large as 10000000000)
+    unsigned long long area = w * h;
+    double mean = (static_cast<double>(w) + static_cast<double>(h)) / 2;
 
-    std::cout << sum << "\n";
-    std::cout << diff << "\n";
+    std::cout << area << "\n";
+
+    // TODO: print the mean of the two sides (it can end in .5)
+    std::cout << std::dec << mean << "\n";
     return 0;
 }
