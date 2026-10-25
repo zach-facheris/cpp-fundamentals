@@ -1,13 +1,17 @@
 #include <iostream>
 
-// TODO: int is too small for the full input range. Widen the parameter and the return type.
-uint64_t square(int64_t n) {
-    return n * n;
+void swap(int &a, int &b)
+{
+    auto tmp = a;
+    a = b;
+    b = tmp;
 }
 
-int main() {
-    long long n;
-    std::cin >> n;
-    std::cout << square(n) << "\n";
+int main()
+{
+    int a, b;
+    std::cin >> a >> b;
+    swap(a, b);
+    std::cout << a << " " << b << "\n";
     return 0;
 }
