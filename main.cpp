@@ -10,8 +10,8 @@ int main() {
     auto it_start = nums.begin();
     auto it_end = nums.end();
 
-    unsigned long long total = std::accumulate(it_start, it_end, 0, [](unsigned long long run, int elem){
-        if(elem % 2 > 0)
+    unsigned long long total = std::accumulate(it_start, it_end, 0ULL, [](unsigned long long run, int elem){
+        if(elem % 2 != 0)
         {
             return run;
         }
