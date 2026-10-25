@@ -1,22 +1,25 @@
 #include <iostream>
-#include <map>
-#include <string>
+#include <vector>
+#include <numeric>
 
-int main()
-{
-    std::map<std::string, int> tally;
-    std::string input;
-    // TODO: read every word until input ends and count it in tally.
-    while(std::cin >> input) tally[input]++;
+int main() {
+    std::vector<int> nums;
+    int x;
+    while (std::cin >> x) nums.push_back(x);
 
-    // TODO: print the number of distinct words on its own line,
-    //       then one line per word: the word, a space, its count.
-    std::cout << tally.size() << std::endl;
+    auto it_start = nums.begin();
+    auto it_end = nums.end();
 
-    for(const auto& entry : tally)
-    {
-        std::cout << entry.first << " " << entry.second << std::endl;
-    }
+    long long total = std::accumulate(it_start, it_end, 0, [](long long run, int elem){
+        if(elem % 2 > 0)
+        {
+            return run;
+        }
 
+        return run + (static_cast<long long>(elem) * elem);
+    });
+    // TODO: set total to the sum of the squares of the even values in nums.
+
+    std::cout << total << "\n";
     return 0;
 }
