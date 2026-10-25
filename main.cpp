@@ -1,33 +1,22 @@
-#include <algorithm>
 #include <iostream>
-#include <vector>
+#include <map>
+#include <string>
 
-#include <limits.h>
+int main()
+{
+    std::map<std::string, int> tally;
+    std::string input;
+    // TODO: read every word until input ends and count it in tally.
+    while(std::cin >> input) tally[input]++;
 
-int main() {
-    int input;
-    std::vector<int> nums;
-    // TODO: read every integer from stdin into nums (the line has no count).
+    // TODO: print the number of distinct words on its own line,
+    //       then one line per word: the word, a space, its count.
+    std::cout << tally.size() << std::endl;
 
-    while(std::cin >> input) 
-        nums.push_back(input);
-
-    int largest = INT32_MIN;
-    int count = 0;
-
-    // TODO: find the largest value in nums, then count how many times it appears.
-    for(auto num: nums)
+    for(const auto& entry : tally)
     {
-        largest = std::max(num, largest);
+        std::cout << entry.first << " " << entry.second << std::endl;
     }
 
-    for(auto num: nums)
-    {
-        if(num == largest)
-            count++;
-    }
-
-    std::cout << largest << "\n";
-    std::cout << count << "\n";
     return 0;
 }

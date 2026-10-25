@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 
+#include <limits.h>
+
 int main() {
     int input;
     std::vector<int> nums;
@@ -10,8 +12,9 @@ int main() {
     while(std::cin >> input) 
         nums.push_back(input);
 
-    int largest = 0;
+    int largest = INT32_MIN;
     int count = 0;
+
     // TODO: find the largest value in nums, then count how many times it appears.
     for(auto num: nums)
     {
