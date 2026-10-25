@@ -12,9 +12,9 @@ int main() {
     while(std::cin >> input) 
         nums.push_back(input);
 
-    int largest = INT64_MIN;
+    int largest = INT32_MIN;
     int count = 0;
-    
+
     // TODO: find the largest value in nums, then count how many times it appears.
     for(auto num: nums)
     {
