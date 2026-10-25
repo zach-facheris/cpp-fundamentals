@@ -1,13 +1,13 @@
 #include <iostream>
 
-int main()
-{
-    int n;
+// TODO: int is too small for the full input range. Widen the parameter and the return type.
+uint64_t square(int64_t n) {
+    return n * n;
+}
+
+int main() {
+    long long n;
     std::cin >> n;
-    // TODO: add up every number from 1 through n,
-    // then print the result on its own line.
-
-    std::cout << (static_cast<long long>(n) * (static_cast<long long>(n) + 1)) / 2 << std::endl;
-
+    std::cout << square(n) << "\n";
     return 0;
 }
